@@ -1,7 +1,7 @@
 syntax = "proto3";
 package detection;
 
-import "indicator.proto";
+import "mail/indicator.proto";
 
 message DetectionDecision {
     enum Severity {
