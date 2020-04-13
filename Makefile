@@ -13,11 +13,9 @@ generate-go-protoc:
 	for x in "mail" "detection"; do \
 		protoc  \
     	  --proto_path=./proto \
-    	  --go_out=:generated/go/$$x \
+    	  --go_out=:generated/go/ \
     	 ./proto/$$x/*.proto; \
     	done
-
-
 
 
 generate-java-gradle:
