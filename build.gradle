@@ -1,0 +1,60 @@
+apply plugin: 'java'
+apply plugin: 'com.google.protobuf'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.10.0'
+        classpath 'nu.studer:gradle-credentials-plugin:1.0.4'
+        classpath "com.google.protobuf:protobuf-gradle-plugin:$protobufGradlePlugin"
+    }
+}
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url 'https://repository.apache.org/content/repositories/releases' } // Apache
+}
+
+sourceSets {
+    main {
+        proto {
+            srcDir 'proto/mail'
+            srcDir 'proto/detection'
+        }
+        java {
+            'generated/java'
+        }
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:$protobufJavaVersion"
+    }
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+
+dependencies {
+    compile "com.google.protobuf:protobuf-java:${protobufJavaVersion}"
+    compile("io.grpc:grpc-stub:${grpcVersion}")
+    compile("io.grpc:grpc-protobuf:${grpcVersion}")
+    compile("javax.annotation:javax.annotation-api:1.3.1")
+}
