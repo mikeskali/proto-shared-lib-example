@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package mail;
+import "indicator.proto";
+
+
+message MailTransaction {
+    string id = 1;
+    int64 tx_created_at = 3;
+    repeated Indicator indicators = 4;
+}

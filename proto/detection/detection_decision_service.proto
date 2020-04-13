@@ -1,0 +1,39 @@
+syntax = "proto3";
+package detection;
+
+import "indicator.proto";
+
+message DetectionDecision {
+    enum Severity {
+        UNDEFINED_SEVERITY = 0;
+        LOW = 1;
+        MEDIUM = 2;
+        HIGH = 3;
+    }
+
+    enum Classification {
+        UNDEFINED_CLASSIFICATION = 0;
+        CLEAN = 1;
+        SUSPICIOUS = 2;
+        MALICIOUS = 3;
+        INFO = 4;
+    }
+
+    Classification classification = 1;
+    Severity severity = 2;
+    repeated mail.Indicator detectedIndicators = 3;
+}
+
+message DetectionDecisionRequest {
+    string tx_id = 1;
+    mail.Indicator indicators = 2;
+}
+
+message DetectionDecisionResponse {
+    DetectionDecision detection_decision = 1;
+}
+
+
+service DetectionDecisionService {
+    rpc GetDetectionDecision(DetectionDecisionRequest) returns (DetectionDecisionResponse);
+}
