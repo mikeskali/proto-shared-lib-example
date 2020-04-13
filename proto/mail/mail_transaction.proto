@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package mail;
-import "indicator.proto";
+import "mail/indicator.proto";
 
 
 message MailTransaction {
