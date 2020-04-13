@@ -26,7 +26,7 @@ message DetectionDecision {
 
 message DetectionDecisionRequest {
     string tx_id = 1;
-    mail.Indicator indicators = 2;
+    repeated mail.Indicator indicators = 2;
 }
 
 message DetectionDecisionResponse {
