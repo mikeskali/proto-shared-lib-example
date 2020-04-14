@@ -1,8 +1,9 @@
 syntax = "proto3";
 
 package mail;
-import "mail/indicator.proto";
+option go_package = "github.com/mikeskali/proto-shared-lib-example/generated/mail";
 
+import "mail/indicator.proto";
 
 message MailTransaction {
     string id = 1;

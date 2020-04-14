@@ -13,7 +13,7 @@ generate-go-protoc:
 	for x in "mail" "detection"; do \
 		protoc  \
     	  --proto_path=./proto \
-    	  --go_out=:generated/go/ \
+    	  --go_out=paths=source_relative:generated/go/ \
     	 ./proto/$$x/*.proto; \
     	done
 
