@@ -6,8 +6,8 @@ package mail
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
+	_ "github.com/mwitkow/go-proto-validators"
 	math "math"
-	_ "validator"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

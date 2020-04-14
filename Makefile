@@ -20,8 +20,8 @@ generate-go-protoc:
 		  --proto_path=${GOPATH}/src/github.com/google/protobuf/src \
 		  --proto_path=${GOPATH}/src/github.com/mwitkow/go-proto-validators \
     	  --proto_path=./proto \
-    	  --go_out=plugins=grpc,paths=source_relative:generated/go/ \
-		  --govalidators_out=paths=source_relative:generated/go/ \
+    	  --go_out=plugins=grpc,Mvalidator/validator.proto=github.com/mwitkow/go-proto-validators,paths=source_relative:generated/go/ \
+		  --govalidators_out=Mvalidator/validator.proto=github.com/mwitkow/go-proto-validators,paths=source_relative:generated/go/ \
     	 ./proto/$$x/*.proto; \
     	done
 
