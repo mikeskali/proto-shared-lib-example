@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package mail;
-option go_package = "github.com/mikeskali/proto-shared-lib-example/generated/mail";
+option go_package = "github.com/mikeskali/proto-shared-lib-example/generated/go/mail";
 
 import "mail/indicator.proto";
 import "validator/validator.proto";

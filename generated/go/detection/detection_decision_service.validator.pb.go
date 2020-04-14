@@ -6,7 +6,7 @@ package detection
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/mikeskali/proto-shared-lib-example/generated/mail"
+	_ "github.com/mikeskali/proto-shared-lib-example/generated/go/mail"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 	math "math"
 )

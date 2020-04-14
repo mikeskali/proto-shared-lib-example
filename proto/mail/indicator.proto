@@ -1,6 +1,6 @@
 syntax = "proto3";
 package mail;
-option go_package = "github.com/mikeskali/proto-shared-lib-example/generated/mail";
+option go_package = "github.com/mikeskali/proto-shared-lib-example/generated/go/mail";
 
 message Indicator {
     string id = 1;

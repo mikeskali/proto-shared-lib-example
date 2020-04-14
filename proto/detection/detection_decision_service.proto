@@ -1,6 +1,6 @@
 syntax = "proto3";
 package detection;
-option go_package = "github.com/mikeskali/proto-shared-lib-example/generated/detection";
+option go_package = "github.com/mikeskali/proto-shared-lib-example/generated/go/detection";
 
 import "mail/indicator.proto";
 
