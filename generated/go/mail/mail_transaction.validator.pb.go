@@ -4,11 +4,11 @@
 package mail
 
 import (
-	_ "."
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 	math "math"
+	_ "validator"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

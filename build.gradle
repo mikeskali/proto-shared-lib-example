@@ -26,8 +26,7 @@ repositories {
 sourceSets {
     main {
         proto {
-            srcDir 'proto/mail'
-            srcDir 'proto/detection'
+            srcDir 'proto'
         }
         java {
             'generated/java'

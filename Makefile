@@ -1,11 +1,13 @@
 #!/usr/bin/make -f
 # ----------------------------------------------------------------------
 #
+
+generate-protoc: generate-java-protoc generate-go-protoc
+
 generate-java-protoc:
 	mkdir -p ./generated/java/mail ./generated/java/detection
 	protoc  \
     	  --proto_path=./proto/ \
-    	  --proto_path=./proto/validator/ \
     	  --java_out=:generated/java/ \
     	 ./proto/mail/*.proto ./proto/detection/*.proto
 
@@ -27,5 +29,3 @@ generate-go-protoc:
 
 generate-java-gradle:
 	./gradlew clean build
-
-generate-protoc: generate-java-protoc generate-go-protoc

@@ -4,7 +4,7 @@ package mail;
 option go_package = "github.com/mikeskali/proto-shared-lib-example/generated/mail";
 
 import "mail/indicator.proto";
-import "validator.proto";
+import "validator/validator.proto";
 
 
 message MailTransaction {
